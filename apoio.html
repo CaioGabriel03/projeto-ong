@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoie a Causa | Doação e Voluntariado | Resgate Amigo</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+   <header>
+        <div class="container">
+            <h1><a href="index.html">Resgate Amigo</a></h1>
+        
+            <button id="menu-toggle" aria-controls="navegacao-principal" aria-expanded="false" aria-label="Abrir menu de navegação">
+                ☰
+            </button>
+        
+            <nav id="navegacao-principal">
+                <ul>
+                    <li><a href="animais.html">Animais para Adoção</a></li>
+                    <li><a href="#projetos">Nossos Projetos</a></li>
+                    <li><a href="apoio.html">Apoie/Doe</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        
+        <section id="doacao" class="container">
+            <h2>Faça uma Doação e Salve uma Vida</h2>
+            <p>Seu apoio financeiro garante vacinas, alimentação e cuidados veterinários essenciais.</p>
+
+            <form id="form-doacao">
+                
+                <fieldset>
+                    <legend>Escolha o Valor da sua Doação</legend>
+                    
+                    <div class="opcoes-valor">
+                        <label>
+                            <input type="radio" name="valor" value="25" checked> R$ 25 (Vacina)
+                        </label>
+                        <label>
+                            <input type="radio" name="valor" value="50"> R$ 50 (Alimentação por mês)
+                        </label>
+                        <label>
+                            <input type="radio" name="valor" value="100"> R$ 100 (Exame e Consulta)
+                        </label>
+                        <label>
+                            <input type="radio" name="valor" value="outro"> Outro valor:
+                            <input type="number" id="outro-valor" placeholder="Ex: 80" min="10">
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Seus Dados</legend>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required>
+                </fieldset>
+                
+                <button type="submit" class="btn-primario">Finalizar Doação</button>
+            </form>
+        </section>
+        
+        <section id="voluntariado" class="container">
+            <h2>Seja um Voluntário! Sua dedicação é a nossa força.</h2>
+            <p>Temos vagas para cuidadores, transportadores e organizadores de eventos.</p>
+
+            <form id="form-voluntario">
+                <label for="vol-nome">Nome Completo:</label>
+                <input type="text" id="vol-nome" required>
+
+                <label for="vol-email">E-mail:</label>
+                <input type="email" id="vol-email" required>
+
+                <label for="interesse">Área de Interesse:</label>
+                <select id="interesse" required>
+                    <option value="">Selecione...</option>
+                    <option value="cuidado">Cuidados Diários</option>
+                    <option value="transporte">Transporte de Animais</option>
+                    <option value="eventos">Organização de Eventos</option>
+                </select>
+                
+                <button type="submit" class="btn-secundario">Quero ser Voluntário</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Resgate Amigo ONG. Todos os direitos reservados.</p>
+            <nav class="links-uteis"></nav>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
