@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    /* --- FUNÇÃO UTILITY: MOSTRAR FEEDBACK (TOAST) --- */
+    function mostrarFeedback(mensagem, tipo = 'sucesso', duracao = 4000) {
+        let container = document.getElementById('toast-container');
+        
+        // Cria o container se ele não existir (deve ser o primeiro a ser criado no CSS)
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'toast-container';
+            document.body.appendChild(container);
+        }
+
+        const toast = document.createElement('div');
+        // Define as classes: base 'toast' e a específica de cor 'toast-sucesso' ou 'toast-erro'
+        toast.className = `toast toast-${tipo}`;
+        toast.textContent = mensagem;
+
+        container.appendChild(toast);
+
+        // Força o reflow para garantir a animação CSS (de baixo para cima)
+        void toast.offsetWidth;
+
+        // Adiciona a classe 'mostrar' para iniciar a transição de visibilidade
+        toast.classList.add('mostrar');
+
+        // Configura o tempo para desaparecer
+        setTimeout(() => {
+            toast.classList.remove('mostrar');
+            // Remove o elemento do DOM após a transição de saída (0.3s definido no CSS)
+            setTimeout(() => {
+                container.removeChild(toast);
+            }, 300);
+        }, duracao);
+    }
+    /* --- FIM FUNÇÃO UTILITY --- */
+
+
     const menuToggle = document.getElementById('menu-toggle');
     const navegacaoPrincipal = document.getElementById('navegacao-principal');
 
@@ -11,6 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', !estaAberto);
             
             menuToggle.innerHTML = estaAberto ? '☰' : '✕';
+        });
+    }
+    
+    // Variáveis do Dropdown para o DESKTOP/TABLET
+    const dropdownItem = document.querySelector('.dropdown-menu-item');
+    
+    if (dropdownItem) {
+        dropdownItem.addEventListener('mouseenter', () => {
+            const submenu = dropdownItem.querySelector('.submenu');
+            if (submenu) {
+                submenu.style.display = 'block';
+            }
+        });
+
+        dropdownItem.addEventListener('mouseleave', () => {
+            const submenu = dropdownItem.querySelector('.submenu');
+            if (submenu) {
+                submenu.style.display = 'none';
+            }
         });
     }
 
@@ -66,10 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value.trim();
 
             if (doacaoValida && nome !== '' && email !== '') {
-                alert(`Doação de R$ ${valorDoacao.toFixed(2)} recebida! Obrigado, ${nome}!`);
+                // SUBSTITUIÇÃO: Usa Toast de Sucesso
+                mostrarFeedback(`Doação de R$ ${valorDoacao.toFixed(2)} recebida! Obrigado, ${nome}!`, 'sucesso');
                 formDoacao.reset();
             } else {
-                alert('Por favor, preencha todos os campos e selecione um valor válido para a doação.');
+                // SUBSTITUIÇÃO: Usa Toast de Erro
+                mostrarFeedback('Por favor, preencha todos os campos e selecione um valor válido para a doação.', 'erro');
             }
         });
     }
@@ -84,10 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const interesse = document.getElementById('interesse').value;
 
             if (nomeVol !== '' && emailVol !== '' && interesse !== '') {
-                alert(`Cadastro de voluntário para a área de ${interesse} recebido! Entraremos em contato, ${nomeVol}.`);
+                // SUBSTITUIÇÃO: Usa Toast de Sucesso
+                mostrarFeedback(`Cadastro de voluntário para a área de ${interesse} recebido! Entraremos em contato, ${nomeVol}.`, 'sucesso');
                 formVoluntario.reset();
             } else {
-                alert('Por favor, preencha todos os campos do formulário de voluntariado.');
+                // SUBSTITUIÇÃO: Usa Toast de Erro
+                mostrarFeedback('Por favor, preencha todos os campos do formulário de voluntariado.', 'erro');
             }
         });
     }

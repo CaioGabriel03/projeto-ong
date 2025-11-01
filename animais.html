@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animais para Adoção | Resgate Amigo</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/main.css"> 
 </head>
 <body>
 
-   <header>
+    <header>
         <div class="container">
             <h1><a href="index.html">Resgate Amigo</a></h1>
         
@@ -19,7 +19,16 @@
             <nav id="navegacao-principal">
                 <ul>
                     <li><a href="animais.html">Animais para Adoção</a></li>
-                    <li><a href="#projetos">Nossos Projetos</a></li>
+                    
+                    <li class="dropdown-menu-item">
+                        <a href="#projetos">Nossos Projetos</a>
+    
+                        <ul class="submenu">
+                            <li><a href="#resgates">Resgates Recentes</a></li>
+                            <li><a href="#eventos">Eventos de Adoção</a></li>
+                            <li><a href="#campanhas">Campanhas de Vacinação</a></li>
+                        </ul>
+                    </li>
                     <li><a href="apoio.html">Apoie/Doe</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
@@ -27,84 +36,126 @@
         </div>
     </header>
 
-
     <main>
         
         <section id="filtros-busca" class="container">
-            <h2>Adote um Amigo!</h2>
-            
-            <form id="form-filtros">
-                <label for="tipo">Tipo:</label>
-                <select id="tipo" name="tipo">
-                    <option value="todos">Todos</option>
-                    <option value="cachorro">Cachorro</option>
-                    <option value="gato">Gato</option>
-                </select>
-
-                <label for="porte">Porte:</label>
-                <select id="porte" name="porte">
-                    <option value="todos">Todos</option>
-                    <option value="pequeno">Pequeno</option>
-                    <option value="medio">Médio</option>
-                    <option value="grande">Grande</option>
-                </select>
+            <div class="row"> 
                 
-                <button type="submit" class="btn-secundario">Filtrar</button>
-            </form>
+                <div class="col-12 col"> 
+                    <h2>Adote um Amigo!</h2>
+                </div>
+                
+                <div class="col-12 col-md-8 col-lg-6 col">
+                    <form id="form-filtros" class="row">
+                        
+                        <div class="col-6 col-lg-4 col">
+                            <label for="tipo">Tipo:</label>
+                            <select id="tipo" name="tipo">
+                                <option value="todos">Todos</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="gato">Gato</option>
+                            </select> 
+                        </div>
+
+                        <div class="col-6 col-lg-4 col">
+                            <label for="porte">Porte:</label>
+                            <select id="porte" name="porte">
+                                <option value="todos">Todos</option>
+                                <option value="pequeno">Pequeno</option>
+                                <option value="medio">Médio</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-12 col-lg-4 col">
+                            <button type="submit" class="btn-secundario" style="width: 100%; margin-top: 25px;">Filtrar</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col-12 col-md-4 col-lg-6 col">
+                    <h3 style="margin-top: 15px;">Animais Encontrados: 4</h3>
+                </div>
+
+            </div>
         </section>
 
-    <section id="galeria-animais" class="container">
-        <article class="cartao-animal" data-tipo="cachorro" data-porte="medio">
-        <figure>
-            <img src="assets/img/rex.jpeg" alt="Foto de Rex, um cachorro dócil." loading="lazy">
-            <figcaption>Rex - Porte Médio</figcaption>
-        </figure>
-        
-        <h4>Rex</h4>
-        <p>Cachorro dócil, 3 anos, castrado. Adora brincar de bolinha e é ideal para famílias ativas.</p>
-        <a href="#" class="btn-primario">Saiba Mais e Adote</a>
-        </article>
+        <section id="galeria-animais" class="container">
+            
+            <article class="cartao-animal" data-tipo="cachorro" data-porte="medio">
+                <figure>
+                    <img src="assets/img/rex.jpeg" alt="Foto de Rex, um cachorro dócil." loading="lazy">
+                    <figcaption>Rex - Porte Médio</figcaption>
+                </figure>
+                
+                <div style="padding: 0 15px; margin-top: 10px;">
+                    <span class="badge badge-primario">Cachorro</span>
+                    <span class="badge badge-neutro">Porte Médio</span>
+                    <span class="badge badge-secundario">Castrado</span>
+                </div>
+                
+                <h4>Rex</h4>
+                <p>Cachorro dócil, 3 anos, castrado. Adora brincar de bolinha e é ideal para famílias ativas.</p>
+                <a href="#" class="btn-primario">Saiba Mais e Adote</a>
+            </article>
 
-        <article class="cartao-animal" data-tipo="cachorro" data-porte="grande">
-        <figure>
-            <img src="assets/img/cecilia.jpg" alt="Foto de Cecilia, uma cadela calma." loading="lazy">
-            <figcaption>Cecilia - Porte Grande</figcaption>
-        </figure>
-        
-        <h4>Cecilia</h4>
-        <p>Cadela adulta e tranquila, ideal para quem busca companhia. Precisa de espaço.</p>
-        <a href="#" class="btn-primario">Saiba Mais e Adote</a>
-        </article>
+            <article class="cartao-animal" data-tipo="cachorro" data-porte="grande">
+                <figure>
+                    <img src="assets/img/cecilia.jpg" alt="Foto de Cecilia, uma cadela calma." loading="lazy">
+                    <figcaption>Cecilia - Porte Grande</figcaption>
+                </figure>
+                
+                <div style="padding: 0 15px; margin-top: 10px;">
+                    <span class="badge badge-primario">Cachorro</span>
+                    <span class="badge badge-alerta">Urgente</span>
+                    <span class="badge badge-neutro">Porte Grande</span>
+                </div>
+                
+                <h4>Cecilia</h4>
+                <p>Cadela adulta e tranquila, ideal para quem busca companhia. Precisa de espaço.</p>
+                <a href="#" class="btn-primario">Saiba Mais e Adote</a>
+            </article>
 
-        <article class="cartao-animal" data-tipo="cachorro" data-porte="pequeno">
-        <figure>
-            <img src="assets/img/milo.jpg" alt="Foto de Milo, um cachorro pequeno e brincalhão." loading="lazy">
-            <figcaption>Milo - Porte Pequeno</figcaption>
-        </figure>
-        
-        <h4>Milo</h4>
-        <p>Cachorro pequeno, cheio de energia e ideal para apartamentos.</p>
-        <a href="#" class="btn-primario">Saiba Mais e Adote</a>
-       </article>
+            <article class="cartao-animal" data-tipo="cachorro" data-porte="pequeno">
+                <figure>
+                    <img src="assets/img/milo.jpg" alt="Foto de Milo, um cachorro pequeno e brincalhão." loading="lazy">
+                    <figcaption>Milo - Porte Pequeno</figcaption>
+                </figure>
+                
+                <div style="padding: 0 15px; margin-top: 10px;">
+                    <span class="badge badge-primario">Cachorro</span>
+                    <span class="badge badge-neutro">Pequeno</span>
+                    <span class="badge badge-secundario">Vacinado</span>
+                </div>
+                
+                <h4>Milo</h4>
+                <p>Cachorro pequeno, cheio de energia e ideal para apartamentos.</p>
+                <a href="#" class="btn-primario">Saiba Mais e Adote</a>
+            </article>
 
-        <article class="cartao-animal" data-tipo="gato" data-porte="pequeno">
-        <figure>
-            <img src="assets/img/mia.jpg" alt="Foto de Mia, uma gata tranquila." loading="lazy">
-            <figcaption>Mia - Gato Porte Pequeno</figcaption>
-        </figure>
-        
-        <h4>Mia</h4>
-        <p>Gata de 1 ano, calma e carinhosa. Perfeita para apartamentos. Busca um lar sem outros felinos.</p>
-        <a href="#" class="btn-primario">Saiba Mais e Adote</a>
-        </article>
-    </section>
+            <article class="cartao-animal" data-tipo="gato" data-porte="pequeno">
+                <figure>
+                    <img src="assets/img/mia.jpg" alt="Foto de Mia, uma gata tranquila." loading="lazy">
+                    <figcaption>Mia - Gato Porte Pequeno</figcaption>
+                </figure>
+                
+                <div style="padding: 0 15px; margin-top: 10px;">
+                    <span class="badge badge-secundario">Gato</span>
+                    <span class="badge badge-neutro">Pequeno</span>
+                    <span class="badge badge-alerta">Atenção</span>
+                </div>
+                
+                <h4>Mia</h4>
+                <p>Gata de 1 ano, calma e carinhosa. Perfeita para apartamentos. Busca um lar sem outros felinos.</p>
+                <a href="#" class="btn-primario">Saiba Mais e Adote</a>
+            </article>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 Resgate Amigo ONG. Todos os direitos reservados.</p>
-            <nav class="links-uteis">
-                </nav>
+            <nav class="links-uteis"></nav>
         </div>
     </footer>
 

@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-escuro); 
+    line-height: 1.6;
+    font-size: var(--fonte-p-base);
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--cor-primaria-dark);
+    text-decoration: underline;
+}
+
+main {
+    padding: var(--espaco-lg) 0;
+    color: var(--cor-texto);
+}
+
+.container {
+    width: 90%; 
+    margin: 0 auto; 
+    padding: 0 var(--espaco-md); 
+}

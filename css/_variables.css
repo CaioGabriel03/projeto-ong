@@ -1,0 +1,34 @@
+:root {
+    /* Cores */
+    --cor-primaria: #007bff;
+    --cor-primaria-dark: #0056b3;
+    --cor-secundaria: #28a745;
+    --cor-secundaria-dark: #1e7e34;
+    
+    /* --- CORES DO TEMA CLARO (ALTO CONTRASTE) --- */
+    --cor-fundo-escuro: #f8f9fa;      /* NOVO: Fundo principal da página (Quase branco) */
+    --cor-fundo-claro: #ffffff;       /* NOVO: Fundo de cards/cabeçalho (Branco Puro) */
+    --cor-texto: #343a40;             /* NOVO: Cor do texto (Cinza Escuro para contraste) */
+    --cor-borda-clara: #ddd;          /* NOVO: Cor de borda leve para separação */
+    --cor-superficie-escura: #f0f0f0;
+
+    --cor-alerta-erro: #dc3545;
+    
+    /* Tipografia */
+    --fonte-principal: 'Arial', sans-serif;
+    --fonte-h1: 2.5rem;
+    --fonte-h2: 2rem;
+    --fonte-h3: 1.5rem;
+    --fonte-p-grande: 1.125rem;
+    --fonte-p-base: 1rem;
+
+    /* Espaçamento (Modular - Base 8px) */
+    --espaco-xs: 4px;
+    --espaco-sm: 8px;
+    --espaco-md: 16px;
+    --espaco-lg: 24px;
+    --espaco-xl: 32px;
+    --espaco-xxl: 64px;
+    
+    --largura-maxima: 1200px;
+}

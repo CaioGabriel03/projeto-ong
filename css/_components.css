@@ -1,0 +1,232 @@
+.btn-primario {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto) !important;
+    padding: var(--espaco-sm) var(--espaco-lg);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn-primario:hover {
+    background-color: var(--cor-primaria-dark);
+    text-decoration: none;
+}
+.btn-secundario {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto) !important;
+    padding: var(--espaco-sm) var(--espaco-lg);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.btn-secundario:hover {
+    background-color: var(--cor-secundaria-dark);
+    text-decoration: none;
+}
+#filtros-busca {
+    padding: var(--espaco-xl) var(--espaco-md);
+    background-color: var(--cor-fundo-claro);
+    border-bottom: 1px solid #333;
+}
+#form-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-md);
+    align-items: center;
+    margin-top: var(--espaco-md);
+}
+#form-filtros input,
+#form-filtros select { 
+    /* Aplica o contraste para o tema claro */
+    background-color: var(--cor-superficie-escura);
+    border: 1px solid var(--cor-borda-clara);
+    color: var(--cor-texto); 
+    
+    padding: var(--espaco-sm);
+    border-radius: var(--espaco-xs);
+    width: 100%;
+    box-sizing: border-box; 
+    font-size: var(--fonte-p-base);
+    
+    /* Garante que o texto do label fique escuro */
+    margin-bottom: var(--espaco-md);
+}
+
+#form-filtros label {
+    display: block;
+    font-weight: bold;
+    color: var(--cor-texto); 
+    margin-bottom: var(--espaco-xs);
+}
+/* --- COMPONENTE: CARDS DE ANIMAIS --- */
+
+.cartao-animal {
+    /* Usando cores do tema claro/neutro */
+    background-color: var(--cor-fundo-claro); 
+    border: 1px solid var(--cor-borda-clara); 
+    border-radius: var(--espaco-sm);
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* Garante que o texto dentro do card seja escuro */
+    color: var(--cor-texto); 
+}
+
+.cartao-animal:hover {
+    transform: translateY(-5px);
+}
+
+.cartao-animal figure {
+    position: relative;
+    margin: 0;
+}
+
+.cartao-animal img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.cartao-animal figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--cor-fundo-claro);
+    padding: var(--espaco-xs) var(--espaco-sm);
+    font-size: 0.9em;
+    width: 100%;
+}
+
+/* Novo: Contêiner para espaçamento interno do texto */
+.cartao-conteudo {
+    padding: var(--espaco-md);
+}
+
+.cartao-conteudo h4 {
+    margin-top: var(--espaco-sm);
+    margin-bottom: var(--espaco-xs);
+    color: var(--cor-primaria-dark);
+}
+
+.cartao-conteudo p {
+    margin-bottom: var(--espaco-md);
+}
+
+.cartao-conteudo .btn-primario {
+    width: 100%;
+    text-align: center;
+}
+/* --- COMPONENTE: BADGES E TAGS (Categorização) --- */
+.badge {
+    display: inline-block;
+    padding: var(--espaco-xs) var(--espaco-sm); 
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: var(--espaco-xs);
+    margin-right: var(--espaco-sm);
+    margin-bottom: var(--espaco-sm);
+    line-height: 1;
+    white-space: nowrap;
+}
+.badge-primario {
+    background-color: var(--cor-primaria-dark);
+    color: var(--cor-texto);
+}
+.badge-secundario {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo-escuro);
+}
+.badge-alerta {
+    background-color: var(--cor-alerta-erro);
+    color: var(--cor-texto);
+}
+.badge-neutro {
+    background-color: var(--cor-texto);
+    color: var(--cor-fundo-claro);
+}
+.alert {
+    padding: var(--espaco-md);
+    margin-bottom: var(--espaco-lg);
+    border: 1px solid transparent;
+    border-radius: var(--espaco-xs);
+    font-size: var(--fonte-p-base);
+    line-height: 1.4;
+}
+
+/* Alert de Sucesso (Usa a cor Secundária - Verde) */
+.alert-sucesso {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo-claro); /* Texto branco */
+    border-color: var(--cor-secundaria-dark);
+}
+
+/* Alert de Erro (Usa a cor Alerta - Vermelho) */
+.alert-erro {
+    background-color: var(--cor-alerta-erro);
+    color: var(--cor-fundo-claro); /* Texto branco */
+    border-color: #9d212a;
+}
+
+/* Alert de Informação (Usa a cor Primária - Azul) */
+.alert-info {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo-claro);
+    border-color: var(--cor-primaria-dark);
+}
+
+
+/* Estilo Base para TOASTS (Notificações Flutuantes) */
+.toast-container {
+    position: fixed;
+    bottom: var(--espaco-xl);
+    right: var(--espaco-xl);
+    z-index: 1000;
+}
+
+.toast {
+    padding: var(--espaco-md) var(--espaco-lg);
+    margin-top: var(--espaco-md);
+    border-radius: var(--espaco-xs);
+    opacity: 0; /* Começa invisível */
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px); /* Começa um pouco abaixo para o efeito de entrada */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toast.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Adaptação das cores do Design System para Toasts */
+.toast-sucesso {
+    background-color: var(--cor-secundaria-dark);
+    color: var(--cor-fundo-claro);
+}
+.toast-erro {
+    background-color: var(--cor-alerta-erro);
+    color: var(--cor-fundo-claro);
+}
+/* --- COMPONENTE: FEEDBACK (ALERTS/TOASTS) --- */
+.alert {
+    padding: var(--espaco-md);
+    margin-bottom: var(--espaco-lg);
+    border: 1px solid transparent;
+    border-radius: var(--espaco-xs);
+    font-size: var(--fonte-p-base);
+}
+.alert-sucesso {
+    background-color: var(--cor-secundaria-dark);
+    color: var(--cor-texto);
+    border-color: var(--cor-secundaria);
+}
+.alert-erro {
+    background-color: var(--cor-alerta-erro);
+    color: var(--cor-texto);
+    border-color: #9d212a;
+}
